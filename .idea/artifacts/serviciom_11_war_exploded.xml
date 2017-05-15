@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="serviciom_11:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/serviciom_11_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="serviciom_11/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="serviciom_11" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="postgresql-9.3-1101.jdbc41" />
+          <element id="file-copy" path="$PROJECT_DIR$/gson-1.1.jar" />
+          <element id="library" level="project" name="gson-2.8.0" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
