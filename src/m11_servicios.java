@@ -3,11 +3,13 @@ import com.google.gson.JsonArray;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.sql.*;
-import java.util.ArrayList;
+import java.util.*;
+import java.util.Date;
 
 /**
  * Clase en la cual se manejan los servicios del modulo 11
@@ -17,7 +19,6 @@ import java.util.ArrayList;
 public class m11_servicios {
     //Atributo que se utiliza para transformar a formado JSON las consultas.
     Gson gson = new Gson();
-
     /**
      * Funcion que recibe el nombre del usuario, y con este extrae
      * la informacion de los alimentos que ha consumido el usuario.
@@ -27,23 +28,20 @@ public class m11_servicios {
     @GET
     @Path("/obtener_alimentos_personalizados")
     @Produces("application/json")
-    public String ObtenerAlimento(@QueryParam("username") String username) {
+    public String ObtenerAlimento(@QueryParam("username") String username)
+    {
         String query = "SELECT * FROM get_alimentos_person(username)";
         Food food = new Food();
-        ArrayList<Food> foods = new ArrayList<>();
         JsonArray arregloJson = new JsonArray();
         try{
             Connection conn = conectarADb();
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
             while(rs.next()){
-                int i = 0;
                 food.setFoodName(rs.getString("nombre_comida"));
                 food.setFoodWeight(rs.getString("peso_comida"));
                 food.setFoodCalorie(rs.getString("calorias_comida"));
-                foods.add(i, food);
                 arregloJson.add(gson.toJson(food));
-                i++;
             }
             return gson.toJson(arregloJson);
         }
@@ -52,6 +50,62 @@ public class m11_servicios {
         }
     }
 
+    /**
+     * Funcion que recibe como parametros la fecha y el nombre del usuario
+     * para hacer la consulta de las calorias consumidas por el usuario durante
+     * esa fecha.
+     * @param fecha
+     * @param username
+     * @return
+     */
+    @GET
+    @Path("/obtener_calorias_fecha")
+    @Produces("application/json")
+    public String ObtenerCaloriasPorFecha(@QueryParam("fecha") Date fecha ,
+                                          @QueryParam("username") String username)
+    {
+        String query = "SELECT * FROM get_calorias_fecha(fecha, username)";
+        JsonArray arregloJson = new JsonArray();
+        try{
+            Connection conn = conectarADb();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            //La variable donde se almacena el resultado de la consulta.
+            String calorie = "";
+            while(rs.next()){
+                calorie = (rs.getString("calorias"));
+                arregloJson.add(gson.toJson(calorie));
+            }
+            return gson.toJson(arregloJson);
+        }
+        catch(Exception e) {
+            return e.getMessage();
+        }
+    }
+
+    /**
+     * Metodo que recibe como parametros el momento (momento del dia en que se alimenta)
+     * y el nombre del usuario para eliminar el alimento que ingirió en ese momento del
+     * día.
+     * @param momento
+     * @param username
+     */
+    @DELETE
+    @Path("/eliminar_alimento_dieta")
+    @Produces("application/json")
+    public void ObtenerCaloriasPorFecha(@QueryParam("momento") String momento ,
+                                          @QueryParam("username") String username)
+    {
+        String query = "SELECT elimina_alimento_dieta(momento, username)";
+        try{
+            Connection conn = conectarADb();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+        }
+        catch(Exception e) {
+           e.getMessage();
+        }
+    }
     /**
      * Conexion a la base de datos
      * @return
