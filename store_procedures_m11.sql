@@ -212,4 +212,22 @@ BEGIN
 END; $$
   LANGUAGE plpgsql;
 
+  CREATE OR REPLACE FUNCTION get_alimentos_sugerencia(usuario VARCHAR)
+  RETURNS TABLE(nombre_comida VARCHAR, peso_comida INT, calorias_comida INT)
+   AS $$
+DECLARE
+   var_r  record;
+BEGIN
+   FOR var_r IN(SELECT  FOODNAME, FOODWEIGHT, FOODCALORIE
+    FROM PERSON inner join  DIET on personid = fk_personid inner join FOOD on fk_foodid = foodid
+    WHERE personusername = usuario AND FOODDINNER = TRUE)
+   LOOP
+  nombre_comida := var_r.FOODNAME;
+  peso_comida := var_r.FOODWEIGHT;
+  calorias_comida := var_r.FOODCALORIE;
+  RETURN NEXT;
+   END LOOP;
+END; $$
+  LANGUAGE plpgsql;
+
 

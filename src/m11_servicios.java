@@ -30,13 +30,15 @@ public class m11_servicios {
     @Produces("application/json")
     public String ObtenerAlimento(@QueryParam("username") String username)
     {
-        String query = "SELECT * FROM get_alimentos_person(username)";
+        String query = "SELECT * FROM get_alimentos_person(?)";
         Food food = new Food();
         JsonArray arregloJson = new JsonArray();
         try{
             Connection conn = conectarADb();
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
+            //Statement st = conn.createStatement();
+            PreparedStatement stm = conn.prepareStatement(query);
+            stm.setString(1, username);
+            ResultSet rs = stm.executeQuery();
             while(rs.next()){
                 food.setFoodName(rs.getString("nombre_comida"));
                 food.setFoodWeight(rs.getString("peso_comida"));
