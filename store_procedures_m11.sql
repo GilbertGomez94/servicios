@@ -230,4 +230,18 @@ BEGIN
 END; $$
   LANGUAGE plpgsql;
 
-
+CREATE OR REPLACE FUNCTION get_momentos()
+  RETURNS TABLE(momento VARCHAR, momento_id INT)
+   AS $$
+DECLARE
+   var_r  record;
+BEGIN
+   FOR var_r IN(SELECT  MOMENTDESCRIPTION, MOMENTID
+    FROM MOMENT)
+   LOOP
+  momento := var_r.MOMENTDESCRIPTION;
+  momento_id := var_r.MOMENTID;
+  RETURN NEXT;
+   END LOOP;
+END; $$
+  LANGUAGE plpgsql;
