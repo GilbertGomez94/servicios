@@ -10,20 +10,21 @@ CREATE FUNCTION elimina_alimento_dieta(momento VARCHAR, usuario VARCHAR)
 LANGUAGE plpgsql;
 
 CREATE OR REPLACE FUNCTION get_alimentos_person(usuario VARCHAR)
-  RETURNS TABLE(nombre_comida VARCHAR, peso_comida INT, calorias_comida INT)
+  RETURNS TABLE(nombre_comida VARCHAR, peso_comida INT, calorias_comida INT, id_alimento INT)
    AS $$
 DECLARE
    var_r	record;
    fecha_actual	DATE;
 BEGIN
    fecha_actual := (SELECT current_date);
-   FOR var_r IN(SELECT  FOODNAME, FOODWEIGHT, FOODCALORIE
+   FOR var_r IN(SELECT  FOODNAME, FOODWEIGHT, FOODCALORIE, FOODID
 		FROM PERSON inner join  DIET on personid = fk_personid inner join FOOD on fk_foodid = foodid
 		WHERE FOODPERSONALIZED = TRUE AND personusername = usuario AND DIETDATETIME = fecha_actual)
    LOOP
 	nombre_comida := var_r.FOODNAME;
 	peso_comida := var_r.FOODWEIGHT;
 	calorias_comida := var_r.FOODCALORIE;
+  id_alimento := var_r.FOODID;
 	RETURN NEXT;
    END LOOP;
 END; $$
@@ -51,18 +52,19 @@ CREATE OR REPLACE FUNCTION get_comida_momento(
      momento VARCHAR,
      fecha DATE,
      usuario VARCHAR)
-  RETURNS TABLE(nombre character varying, calorias integer) 
+  RETURNS TABLE(nombre character varying, calorias integer, id_dieta integer) 
   AS $$
 DECLARE
   var_r	record;
 BEGIN
-   FOR var_r IN(SELECT FOODNAME, DIETCALORIE
+   FOR var_r IN(SELECT FOODNAME, DIETCALORIE, DIETID
              FROM moment, PERSON inner join  DIET on personid = fk_personid inner join FOOD on fk_foodid = foodid
 	     WHERE fk_momentid = momentid and momentdescription = momento and DIETDATETIME = fecha and
 	     PERSONUSERNAME = usuario)
    LOOP
 	nombre := var_r.FOODNAME;
 	calorias := var_r.DIETCALORIE;
+  id_dieta := var_r.DIETID;
 	RETURN NEXT;
    END LOOP;
 END; $$
@@ -164,19 +166,20 @@ END; $$
 
 
 CREATE OR REPLACE FUNCTION get_todos_alimentos(usuario VARCHAR)
-  RETURNS TABLE(nombre_comida VARCHAR, peso_comida INT, calorias_comida INT)
+  RETURNS TABLE(nombre_comida VARCHAR, peso_comida INT, calorias_comida INT, id_alimento INT)
    AS $$
 DECLARE
    var_r	record;
    fecha_actual	DATE;
 BEGIN
-   FOR var_r IN(SELECT  FOODNAME, FOODWEIGHT, FOODCALORIE
+   FOR var_r IN(SELECT  FOODNAME, FOODWEIGHT, FOODCALORIE, FOODID
 		FROM PERSON inner join  DIET on personid = fk_personid inner join FOOD on fk_foodid = foodid
-		WHERE personusername = usuario)
+		WHERE personusername = usuario OR FOODPERSONALIZED == FALSE)
    LOOP
 	nombre_comida := var_r.FOODNAME;
 	peso_comida := var_r.FOODWEIGHT;
 	calorias_comida := var_r.FOODCALORIE;
+  id_alimento := var_r.FOODID;
 	RETURN NEXT;
    END LOOP;
 END; $$
@@ -212,19 +215,20 @@ BEGIN
 END; $$
   LANGUAGE plpgsql;
 
-  CREATE OR REPLACE FUNCTION get_alimentos_sugerencia(usuario VARCHAR)
-  RETURNS TABLE(nombre_comida VARCHAR, peso_comida INT, calorias_comida INT)
+  CREATE OR REPLACE FUNCTION get_alimentos_sugerencia(usuario VARCHAR, calorias INT)
+  RETURNS TABLE(nombre_comida VARCHAR, peso_comida INT, calorias_comida INT, id_alimento INT)
    AS $$
 DECLARE
    var_r  record;
 BEGIN
-   FOR var_r IN(SELECT  FOODNAME, FOODWEIGHT, FOODCALORIE
+   FOR var_r IN(SELECT  FOODNAME, FOODWEIGHT, FOODCALORIE, FOODID
     FROM PERSON inner join  DIET on personid = fk_personid inner join FOOD on fk_foodid = foodid
-    WHERE personusername = usuario AND FOODDINNER = TRUE)
+    WHERE personusername = usuario AND FOODDINNER = TRUE AND FOODCALORIE <= calorias)
    LOOP
   nombre_comida := var_r.FOODNAME;
   peso_comida := var_r.FOODWEIGHT;
   calorias_comida := var_r.FOODCALORIE;
+  id_alimento := var_r.FOODID
   RETURN NEXT;
    END LOOP;
 END; $$
@@ -241,6 +245,30 @@ BEGIN
    LOOP
   momento := var_r.MOMENTDESCRIPTION;
   momento_id := var_r.MOMENTID;
+  RETURN NEXT;
+   END LOOP;
+END; $$
+  LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION get_todos_alimentos_autocompletar(usuario VARCHAR)
+  RETURNS TABLE(nombre_comida VARCHAR, peso_comida INT, calorias_comida INT, id_alimento INT)
+   AS $$
+DECLARE
+   var_r  record;
+   fecha_actual DATE;
+BEGIN
+   FOR var_r IN(SELECT  FOODNAME, FOODWEIGHT, FOODCALORIE, FOODID
+    FROM PERSON inner join  DIET on personid = fk_personid inner join FOOD on fk_foodid = foodid
+    WHERE personusername = usuario OR FOODPERSONALIZED = false
+    UNION
+    SELECT  FOODNAME, FOODWEIGHT, FOODCALORIE, FOODID
+    FROM FOOD
+    WHERE FOODPERSONALIZED = false)
+   LOOP
+  nombre_comida := var_r.FOODNAME;
+  peso_comida := var_r.FOODWEIGHT;
+  calorias_comida := var_r.FOODCALORIE;
+  id_alimento := var_r.FOODID;
   RETURN NEXT;
    END LOOP;
 END; $$
