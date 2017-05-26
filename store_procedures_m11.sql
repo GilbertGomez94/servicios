@@ -201,17 +201,18 @@ END; $$
 
 
 
-CREATE OR REPLACE FUNCTION m11_elimina_alimento_person(nombre_alimento VARCHAR)
+CREATE OR REPLACE FUNCTION m11_elimina_alimento_person(nombre_alimento VARCHAR, id_usuario INT)
   RETURNS void 
    AS $$ 
 DECLARE
-	id_alimento	int;
+  id_alimento int;
 BEGIN
-	id_alimento := (SELECT FOODID FROM FOOD WHERE FOODNAME = nombre_alimento);
-	DELETE FROM DIET
-	WHERE FK_FOODID = id_alimento and DIETDATETIME = current_date;
-	DELETE FROM FOOD
-	WHERE FOODID = id_alimento;
+  id_alimento := (SELECT FOODID FROM FOOD WHERE FOODNAME = nombre_alimento);
+  DELETE FROM DIET
+  WHERE FK_FOODID = id_alimento and (select personid from person where personid = id_usuario) = id_usuario 
+  and FK_PERSONID = id_usuario;
+  DELETE FROM FOOD
+  WHERE FOODID = id_alimento;
 END; $$
   LANGUAGE plpgsql;
 
