@@ -5,7 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/serviciom_11_war_exploded/WEB-INF/classes/m11_servicios.class" afterPath="$PROJECT_DIR$/out/artifacts/serviciom_11_war_exploded/WEB-INF/classes/m11_servicios.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/serviciom_11/m11_servicios.class" afterPath="$PROJECT_DIR$/out/production/serviciom_11/m11_servicios.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/m11_servicios.java" afterPath="$PROJECT_DIR$/src/m11_servicios.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/serviciom_11.iml" afterPath="$PROJECT_DIR$/serviciom_11.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,16 +31,46 @@
       <file leaf-file-name="m11_servicios.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/m11_servicios.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="39" column="37" lean-forward="false" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+            <state relative-caret-position="20">
+              <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1495497980799" expanded="true" signature="933:970" ph="SELECT * FRO... get_food" />
-                <marker date="1495497980799" expanded="true" signature="2266:2299" ph="SELECT * FRO... get_calorias_fecha" />
-                <marker date="1495497980799" expanded="true" signature="2266:2305" ph="SELECT * FRO... get_calorias_fecha" />
-                <marker date="1495497980799" expanded="true" signature="2266:2315" ph="SELECT * FRO... get_calorias_fecha" />
-                <marker date="1495497980799" expanded="true" signature="3449:3497" ph="SELECT * FRO... elimina_alimento_dieta" />
+                <marker date="1495677681699" expanded="true" signature="933:970" ph="SELECT * FRO... get_food" />
+                <marker date="1495677681699" expanded="true" signature="2266:2299" ph="SELECT * FRO... get_calorias_fecha" />
+                <marker date="1495677681699" expanded="true" signature="2266:2305" ph="SELECT * FRO... get_calorias_fecha" />
+                <marker date="1495677681699" expanded="true" signature="2266:2315" ph="SELECT * FRO... get_calorias_fecha" />
+                <marker date="1495677681699" expanded="true" signature="3449:3497" ph="SELECT * FRO... elimina_alimento_dieta" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="serviciom_11.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/serviciom_11.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -106,9 +136,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1215" />
-    <option name="height" value="804" />
+    <option name="height" value="776" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -129,6 +159,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -151,17 +182,48 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="serviciom_11" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="serviciom_11" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="serviciom_11" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="serviciom_11" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$" />
@@ -672,14 +734,18 @@
       <workItem from="1495071416472" duration="3402000" />
       <workItem from="1495480660939" duration="4280000" />
       <workItem from="1495497625299" duration="844000" />
+      <workItem from="1495589066489" duration="92000" />
+      <workItem from="1495665420187" duration="2456000" />
+      <workItem from="1495669244439" duration="3848000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26061000" />
+    <option name="totallyTimeSpent" value="32457000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1215" height="804" extended-state="6" />
+    <frame x="65" y="24" width="1215" height="776" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -700,8 +766,8 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281027" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24938272" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -756,15 +822,132 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/m11_servicios.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="39" column="37" lean-forward="false" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1495677681699" expanded="true" signature="933:970" ph="SELECT * FRO... get_food" />
+            <marker date="1495677681699" expanded="true" signature="2266:2299" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="2266:2305" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="2266:2315" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="3449:3497" ph="SELECT * FRO... elimina_alimento_dieta" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Principal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store_procedures_m11.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Food.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/m11_servicios.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="39" column="37" lean-forward="false" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1495677681699" expanded="true" signature="933:970" ph="SELECT * FRO... get_food" />
+            <marker date="1495677681699" expanded="true" signature="2266:2299" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="2266:2305" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="2266:2315" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="3449:3497" ph="SELECT * FRO... elimina_alimento_dieta" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Principal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store_procedures_m11.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Food.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/m11_servicios.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="39" column="37" lean-forward="false" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1495677681699" expanded="true" signature="933:970" ph="SELECT * FRO... get_food" />
+            <marker date="1495677681699" expanded="true" signature="2266:2299" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="2266:2305" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="2266:2315" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="3449:3497" ph="SELECT * FRO... elimina_alimento_dieta" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Principal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/store_procedures_m11.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Food.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/m11_servicios.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="740">
           <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1495497980799" expanded="true" signature="933:970" ph="SELECT * FRO... get_food" />
-            <marker date="1495497980799" expanded="true" signature="2266:2299" ph="SELECT * FRO... get_calorias_fecha" />
-            <marker date="1495497980799" expanded="true" signature="2266:2305" ph="SELECT * FRO... get_calorias_fecha" />
-            <marker date="1495497980799" expanded="true" signature="2266:2315" ph="SELECT * FRO... get_calorias_fecha" />
-            <marker date="1495497980799" expanded="true" signature="3449:3497" ph="SELECT * FRO... elimina_alimento_dieta" />
+            <marker date="1495677681699" expanded="true" signature="933:970" ph="SELECT * FRO... get_food" />
+            <marker date="1495677681699" expanded="true" signature="2266:2299" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="2266:2305" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="2266:2315" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="3449:3497" ph="SELECT * FRO... elimina_alimento_dieta" />
           </folding>
         </state>
       </provider>
@@ -799,11 +982,11 @@
           <caret line="58" column="14" lean-forward="true" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1495497980799" expanded="true" signature="933:970" ph="SELECT * FRO... get_food" />
-            <marker date="1495497980799" expanded="true" signature="2266:2299" ph="SELECT * FRO... get_calorias_fecha" />
-            <marker date="1495497980799" expanded="true" signature="2266:2305" ph="SELECT * FRO... get_calorias_fecha" />
-            <marker date="1495497980799" expanded="true" signature="2266:2315" ph="SELECT * FRO... get_calorias_fecha" />
-            <marker date="1495497980799" expanded="true" signature="3449:3497" ph="SELECT * FRO... elimina_alimento_dieta" />
+            <marker date="1495677681699" expanded="true" signature="933:970" ph="SELECT * FRO... get_food" />
+            <marker date="1495677681699" expanded="true" signature="2266:2299" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="2266:2305" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="2266:2315" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="3449:3497" ph="SELECT * FRO... elimina_alimento_dieta" />
           </folding>
         </state>
       </provider>
@@ -830,11 +1013,11 @@
           <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1495497980799" expanded="true" signature="933:970" ph="SELECT * FRO... get_food" />
-            <marker date="1495497980799" expanded="true" signature="2266:2299" ph="SELECT * FRO... get_calorias_fecha" />
-            <marker date="1495497980799" expanded="true" signature="2266:2305" ph="SELECT * FRO... get_calorias_fecha" />
-            <marker date="1495497980799" expanded="true" signature="2266:2315" ph="SELECT * FRO... get_calorias_fecha" />
-            <marker date="1495497980799" expanded="true" signature="3449:3497" ph="SELECT * FRO... elimina_alimento_dieta" />
+            <marker date="1495677681699" expanded="true" signature="933:970" ph="SELECT * FRO... get_food" />
+            <marker date="1495677681699" expanded="true" signature="2266:2299" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="2266:2305" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="2266:2315" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="3449:3497" ph="SELECT * FRO... elimina_alimento_dieta" />
           </folding>
         </state>
       </provider>
@@ -861,11 +1044,11 @@
           <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1495497980799" expanded="true" signature="933:970" ph="SELECT * FRO... get_food" />
-            <marker date="1495497980799" expanded="true" signature="2266:2299" ph="SELECT * FRO... get_calorias_fecha" />
-            <marker date="1495497980799" expanded="true" signature="2266:2305" ph="SELECT * FRO... get_calorias_fecha" />
-            <marker date="1495497980799" expanded="true" signature="2266:2315" ph="SELECT * FRO... get_calorias_fecha" />
-            <marker date="1495497980799" expanded="true" signature="3449:3497" ph="SELECT * FRO... elimina_alimento_dieta" />
+            <marker date="1495677681699" expanded="true" signature="933:970" ph="SELECT * FRO... get_food" />
+            <marker date="1495677681699" expanded="true" signature="2266:2299" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="2266:2305" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="2266:2315" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="3449:3497" ph="SELECT * FRO... elimina_alimento_dieta" />
           </folding>
         </state>
       </provider>
@@ -886,6 +1069,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/store_procedures_m11.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -894,24 +1084,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+    <entry file="file://$PROJECT_DIR$/serviciom_11.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/m11_servicios.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="39" column="37" lean-forward="false" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+        <state relative-caret-position="20">
+          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1495497980799" expanded="true" signature="933:970" ph="SELECT * FRO... get_food" />
-            <marker date="1495497980799" expanded="true" signature="2266:2299" ph="SELECT * FRO... get_calorias_fecha" />
-            <marker date="1495497980799" expanded="true" signature="2266:2305" ph="SELECT * FRO... get_calorias_fecha" />
-            <marker date="1495497980799" expanded="true" signature="2266:2315" ph="SELECT * FRO... get_calorias_fecha" />
-            <marker date="1495497980799" expanded="true" signature="3449:3497" ph="SELECT * FRO... elimina_alimento_dieta" />
+            <marker date="1495677681699" expanded="true" signature="933:970" ph="SELECT * FRO... get_food" />
+            <marker date="1495677681699" expanded="true" signature="2266:2299" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="2266:2305" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="2266:2315" ph="SELECT * FRO... get_calorias_fecha" />
+            <marker date="1495677681699" expanded="true" signature="3449:3497" ph="SELECT * FRO... elimina_alimento_dieta" />
           </folding>
         </state>
       </provider>
@@ -935,7 +1142,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Web</last-edited>
+          <last-edited>Web (serviciom_11)|Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -983,7 +1190,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>gson-2.8.0</last-edited>
+          <last-edited>postgresql-9.3-1101.jdbc41</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

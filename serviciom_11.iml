@@ -22,15 +22,6 @@
     <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.0.0 - RESTful Web Service" level="application_server_libraries" />
     <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.0.0" level="application_server_libraries" />
     <orderEntry type="library" name="postgresql-9.3-1101.jdbc41" level="project" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/gson-1.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="gson-2.8.0" level="project" />
   </component>
 </module>

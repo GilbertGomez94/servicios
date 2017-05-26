@@ -1,4 +1,4 @@
-CREATE FUNCTION elimina_alimento_dieta(momento VARCHAR, usuario VARCHAR)
+CREATE FUNCTION m11_elimina_alimento_dieta(momento VARCHAR, usuario VARCHAR)
  RETURNS void AS $$
     DECLARE
         fecha_actual DATE;
@@ -9,7 +9,7 @@ CREATE FUNCTION elimina_alimento_dieta(momento VARCHAR, usuario VARCHAR)
     END; $$
 LANGUAGE plpgsql;
 
-CREATE OR REPLACE FUNCTION get_alimentos_person(usuario VARCHAR)
+CREATE OR REPLACE FUNCTION m11_get_alimentos_person(usuario VARCHAR)
   RETURNS TABLE(nombre_comida VARCHAR, peso_comida INT, calorias_comida INT, id_alimento INT)
    AS $$
 DECLARE
@@ -30,7 +30,7 @@ BEGIN
 END; $$
   LANGUAGE plpgsql;
 
-CREATE OR REPLACE FUNCTION get_calorias_fecha(
+CREATE OR REPLACE FUNCTION m11_get_calorias_fecha(
     fecha DATE,
     usuario VARCHAR)
   RETURNS TABLE(calorias integer) 
@@ -48,7 +48,7 @@ BEGIN
 END; $$
   LANGUAGE plpgsql;
 
-CREATE OR REPLACE FUNCTION get_comida_momento(
+CREATE OR REPLACE FUNCTION m11_get_comida_momento(
      momento VARCHAR,
      fecha DATE,
      usuario VARCHAR)
@@ -70,7 +70,7 @@ BEGIN
 END; $$
   LANGUAGE plpgsql;
 
-CREATE OR REPLACE FUNCTION inserta_alim_person(
+CREATE OR REPLACE FUNCTION m11_inserta_alim_person(
     nombre VARCHAR,
     peso INT,
     calorias INT)
@@ -81,7 +81,7 @@ CREATE OR REPLACE FUNCTION inserta_alim_person(
     END; $$
   LANGUAGE plpgsql;
 
-CREATE OR REPLACE FUNCTION inserta_dieta(
+CREATE OR REPLACE FUNCTION m11_inserta_dieta(
     caloria INT,
     nombre_alimento VARCHAR,
     momento VARCHAR,
@@ -99,7 +99,7 @@ CREATE OR REPLACE FUNCTION inserta_dieta(
     END; $$
   LANGUAGE plpgsql;
 
-CREATE OR REPLACE FUNCTION get_calorias_dia(
+CREATE OR REPLACE FUNCTION m11_get_calorias_dia(
 usuario VARCHAR)
   RETURNS TABLE(calorias INT) 
   AS $$
@@ -120,7 +120,7 @@ BEGIN
 END; $$
   LANGUAGE plpgsql
 
-CREATE OR REPLACE FUNCTION get_calorias_mes(
+CREATE OR REPLACE FUNCTION m11_get_calorias_mes(
     IN usuario character varying,
     IN fecha_inicio date,
     IN fecha_fin date)
@@ -140,7 +140,7 @@ BEGIN
 END; $BODY$
   LANGUAGE plpgsql
 
-CREATE OR REPLACE FUNCTION get_calorias_semana(
+CREATE OR REPLACE FUNCTION m11_get_calorias_semana(
     usuario VARCHAR)
   RETURNS TABLE(calorias integer) 
   AS $$
@@ -165,7 +165,7 @@ END; $$
   LANGUAGE plpgsql;
 
 
-CREATE OR REPLACE FUNCTION get_todos_alimentos(usuario VARCHAR)
+CREATE OR REPLACE FUNCTION m11_get_todos_alimentos(usuario VARCHAR)
   RETURNS TABLE(nombre_comida VARCHAR, peso_comida INT, calorias_comida INT, id_alimento INT)
    AS $$
 DECLARE
@@ -186,7 +186,7 @@ END; $$
   LANGUAGE plpgsql;
 
 
-CREATE OR REPLACE FUNCTION act_alimento_person(nombre_alimento VARCHAR, peso_alimento VARCHAR, caloria_alimento INT)
+CREATE OR REPLACE FUNCTION m11_act_alimento_person(nombre_alimento VARCHAR, peso_alimento VARCHAR, caloria_alimento INT)
   RETURNS void 
    AS $$ 
 DECLARE
@@ -201,7 +201,7 @@ END; $$
 
 
 
-CREATE OR REPLACE FUNCTION elimina_alimento_person(nombre_alimento VARCHAR)
+CREATE OR REPLACE FUNCTION m11_elimina_alimento_person(nombre_alimento VARCHAR)
   RETURNS void 
    AS $$ 
 DECLARE
@@ -215,7 +215,7 @@ BEGIN
 END; $$
   LANGUAGE plpgsql;
 
-  CREATE OR REPLACE FUNCTION get_alimentos_sugerencia(usuario VARCHAR, calorias INT)
+  CREATE OR REPLACE FUNCTION m11_get_alimentos_sugerencia(usuario VARCHAR, calorias INT)
   RETURNS TABLE(nombre_comida VARCHAR, peso_comida INT, calorias_comida INT, id_alimento INT)
    AS $$
 DECLARE
@@ -234,7 +234,7 @@ BEGIN
 END; $$
   LANGUAGE plpgsql;
 
-CREATE OR REPLACE FUNCTION get_momentos()
+CREATE OR REPLACE FUNCTION m11_get_momentos()
   RETURNS TABLE(momento VARCHAR, momento_id INT)
    AS $$
 DECLARE
@@ -250,7 +250,7 @@ BEGIN
 END; $$
   LANGUAGE plpgsql;
 
-CREATE OR REPLACE FUNCTION get_todos_alimentos_autocompletar(usuario VARCHAR)
+CREATE OR REPLACE FUNCTION m11_get_todos_alimentos_autocompletar(usuario VARCHAR)
   RETURNS TABLE(nombre_comida VARCHAR, peso_comida INT, calorias_comida INT, id_alimento INT)
    AS $$
 DECLARE
@@ -264,6 +264,27 @@ BEGIN
     SELECT  FOODNAME, FOODWEIGHT, FOODCALORIE, FOODID
     FROM FOOD
     WHERE FOODPERSONALIZED = false)
+   LOOP
+  nombre_comida := var_r.FOODNAME;
+  peso_comida := var_r.FOODWEIGHT;
+  calorias_comida := var_r.FOODCALORIE;
+  id_alimento := var_r.FOODID;
+  RETURN NEXT;
+   END LOOP;
+END; $$
+  LANGUAGE plpgsql;
+
+--Este devuelve todos los alimentos personalizados de la persona (TODOS, no solo los del dia)
+  CREATE OR REPLACE FUNCTION m11_m11_get_alimentos_person_lista(usuario VARCHAR)
+  RETURNS TABLE(nombre_comida VARCHAR, peso_comida INT, calorias_comida INT, id_alimento INT)
+   AS $$se
+DECLARE
+   var_r  record;
+   fecha_actual DATE;
+BEGIN
+   FOR var_r IN(SELECT  FOODNAME, FOODWEIGHT, FOODCALORIE, FOODID
+    FROM PERSON inner join  DIET on personid = fk_personid inner join FOOD on fk_foodid = foodid
+    WHERE FOODPERSONALIZED = TRUE AND personusername = usuario)
    LOOP
   nombre_comida := var_r.FOODNAME;
   peso_comida := var_r.FOODWEIGHT;
