@@ -1,14 +1,14 @@
-CREATE FUNCTION m11_elimina_alimento_dieta(momento VARCHAR, usuario VARCHAR)
+CREATE OR REPLACE FUNCTION m11_elimina_alimento_dieta(momento VARCHAR, usuario VARCHAR)
  RETURNS void AS $$
     DECLARE
         fecha_actual DATE;
     BEGIN
-	fecha_actual := current_date;
+  fecha_actual := current_date;
         DELETE FROM DIET
-        WHERE momentdescription = momento and DIETDATETIME = fecha_actual;
+        WHERE (select momentdescription from moment where momentdescription = momento) = momento and DIETDATETIME = fecha_actual;
     END; $$
 LANGUAGE plpgsql;
-
+--Este solo devuelve los alimentos personalizados del dia, al final esta el que devuelve todos.
 CREATE OR REPLACE FUNCTION m11_get_alimentos_person(usuario VARCHAR)
   RETURNS TABLE(nombre_comida VARCHAR, peso_comida INT, calorias_comida INT, id_alimento INT)
    AS $$
