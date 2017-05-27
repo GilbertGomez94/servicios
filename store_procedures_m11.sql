@@ -186,13 +186,14 @@ END; $$
   LANGUAGE plpgsql;
 
 
-CREATE OR REPLACE FUNCTION m11_act_alimento_person(nombre_alimento VARCHAR, peso_alimento VARCHAR, caloria_alimento INT)
+CREATE OR REPLACE FUNCTION m11_act_alimento_person(nombre_alimento VARCHAR, peso_alimento VARCHAR, caloria_alimento INT, id_usuario INT)
   RETURNS void 
    AS $$ 
 DECLARE
 	id_alimento	int;
 BEGIN
-	id_alimento := (SELECT FOODID FROM FOOD WHERE FOODNAME = nombre_alimento);
+	id_alimento := (SELECT FOODID FROM FOOD, DIET, PERSON WHERE FOODNAME = nombre_alimento WHERE FK_PERSONID = id_usuario 
+                  AND FK_FOODID = FOODID);
 	UPDATE FOOD SET FOODNAME = nombre_alimento , FOODWEIGHT = peso_alimento , FOODCALORIE = caloria_alimento
 	WHERE FOODID = id_alimento;
 END; $$
