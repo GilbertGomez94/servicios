@@ -23,6 +23,7 @@ public class m11_servicios {
      * Funcion que recibe el nombre del usuario, y con este extrae
      * la informacion de los alimentos que ha consumido el usuario.
      * la informacion de los alimentos que ha consumido el usuario.
+     * la informacion de los alimentos que ha consumido el usuario.
      * @param username
      * @return
      */
